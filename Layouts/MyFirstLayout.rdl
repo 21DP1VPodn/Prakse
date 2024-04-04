@@ -19,7 +19,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>5.35303in</Width>
+                  <Width>5.63in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -462,6 +462,36 @@
                                 </Border>
                               </Style>
                             </Tablix>
+                            <Textbox Name="Posting_Date">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!Posting_Date.Value</Value>
+                                      <Style />
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Posting_Date</rd:DefaultName>
+                              <Top>2.65889in</Top>
+                              <Left>4.28833in</Left>
+                              <Height>0.25in</Height>
+                              <Width>1.34167in</Width>
+                              <ZIndex>3</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
                           </ReportItems>
                           <KeepTogether>true</KeepTogether>
                           <Style>
@@ -470,7 +500,6 @@
                             </Border>
                           </Style>
                         </Rectangle>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -498,7 +527,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet_Result</DataSetName>
             <Height>2.90889in</Height>
-            <Width>5.35303in</Width>
+            <Width>5.63in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -597,11 +626,20 @@
       </DefaultValue>
       <Prompt>QuantityCaption</Prompt>
     </ReportParameter>
+    <ReportParameter Name="Posting_DateCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Posting_DateCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Posting_DateCaption</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>9</NumberOfRows>
+      <NumberOfRows>10</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -647,6 +685,11 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>8</RowIndex>
           <ParameterName>QuantityCaption</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>9</RowIndex>
+          <ParameterName>Posting_DateCaption</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
@@ -719,6 +762,9 @@ End Function
         </Field>
         <Field Name="QuantityFormat">
           <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="Posting_Date">
+          <DataField>Posting_Date</DataField>
         </Field>
       </Fields>
       <Query>
