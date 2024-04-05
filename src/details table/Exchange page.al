@@ -3,18 +3,18 @@ page 60107 "Exchange page"
     Caption = 'Exchange page';
     ApplicationArea = All;
     PageType = Document;
-    SourceTable = "Exchanges table";
     UsageCategory = Lists;
 
     layout
     {
         area(Content)
         {
-            field("Valute number"; Rec."Valute number")
+            field("Valute number"; Valutenumber)
             {
                 caption = 'Valute code';
+                TableRelation = "Exchanges table"."No.";
             }
-            field("Valutes"; Rec.Valutes)
+            field("Valutes"; Valutes)
             {
                 Caption = 'Valutes';
                 Editable = true;
@@ -25,7 +25,7 @@ page 60107 "Exchange page"
                 Caption = 'Quantity';
             }
 
-            field(Rate; Rec.Rate)
+            field(Rate; Rate)
             {
                 Caption = 'Rate';
             }
@@ -41,5 +41,8 @@ page 60107 "Exchange page"
     var
         Quantity: decimal;
         Result: decimal;
+        Valutenumber: code[20];
+        Valutes: text[20];
+        Rate: Decimal;
 
 }
