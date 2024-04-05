@@ -36,6 +36,11 @@ Report 60100 "Test report"
                 IncludeCaption = true;
             }
 
+            column(Posting_Date; "Posting Date")
+            {
+                IncludeCaption = true;
+            }
+
             dataitem("Sales Line"; "Sales Line")
             {
                 DataItemLink = "Document No." = field("No."), "Document Type" = field("Document Type");
@@ -52,11 +57,6 @@ Report 60100 "Test report"
                 }
 
                 column(Quantity; Quantity)
-                {
-                    IncludeCaption = true;
-                }
-
-                column(Posting_Date; "Posting Date")
                 {
                     IncludeCaption = true;
                 }
