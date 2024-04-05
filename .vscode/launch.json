@@ -9,7 +9,7 @@
             "server": "http://prakse/BC",
             "serverInstance": "BC",
             "authentication": "UserPassword",
-            "startupObjectId": 60100,
+            "startupObjectId": 60107,
             "startupObjectType": "Page",
             "breakOnError": "All",
             "launchBrowser": true,
