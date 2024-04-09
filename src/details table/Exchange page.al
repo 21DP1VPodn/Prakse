@@ -12,12 +12,15 @@ page 60107 "Exchange page"
             field("Valute number"; Valutenumber)
             {
                 caption = 'Valute code';
-                TableRelation = "Exchanges table"."No.";
             }
-            field("Valutes"; Valutes)
+            field("Valute_from"; Valute_from)
             {
-                Caption = 'Valutes';
-                Editable = true;
+                Caption = 'From';
+            }
+
+            field("Valute_to"; Valute_to)
+            {
+                Caption = 'To';
             }
 
             field(Quantity; Quantity)
@@ -42,7 +45,8 @@ page 60107 "Exchange page"
         Quantity: decimal;
         Result: decimal;
         Valutenumber: code[20];
-        Valutes: text[20];
+        Valute_from: text[20];
+        Valute_to: text[20];
         Rate: Decimal;
 
 }

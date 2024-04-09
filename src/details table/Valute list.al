@@ -16,9 +16,14 @@ page 60106 "Valute list"
                 {
                     Caption = 'Number';
                 }
-                field(Valute; Rec.Valute)
+                field(Valute_from; Rec.Valute_from)
                 {
-                    Caption = 'Valutes';
+                    Caption = 'From';
+                }
+
+                field(Valute_to; Rec.Valute_to)
+                {
+                    Caption = 'To';
                 }
 
                 field(Rate; Rec.Rate)
