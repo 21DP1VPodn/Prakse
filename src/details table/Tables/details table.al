@@ -56,14 +56,12 @@ table 60100 Detail
 
         }
     }
-    /*
-        trigger OnInsert()
-        var
-            NumberSeriesMgt: Codeunit NoSeriesManagement;
-            NewNoSeriesCode: Code[20];
-        begin
-            if rec.DetailNo = '' then
-                NumberSeriesMgt.InitSeries('Detail', '', Today(), DetailNo, NewNoSeriesCode);
-        end;
-        */
+    trigger OnInsert()
+    var
+        NumberSeriesMgt: Codeunit NoSeriesManagement;
+        NewNoSeriesCode: Code[20];
+    begin
+        if rec.DetailNo = '' then
+            NumberSeriesMgt.InitSeries('Detail', '', Today(), DetailNo, NewNoSeriesCode);
+    end;
 }
