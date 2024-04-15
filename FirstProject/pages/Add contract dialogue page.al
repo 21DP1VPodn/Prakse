@@ -21,13 +21,6 @@ page 50203 "Add dialogue page"
                     Client_name := CustRec.Name;
                 end;
             }
-
-            field("Equipment ID"; Equipment)
-            {
-                Caption = 'Equipment ID';
-                TableRelation = "equipment catalogue table"."Equipment ID";
-            }
-
             field("Beign date"; Date_from)
             {
                 Caption = 'Cotract begin date';
@@ -36,6 +29,120 @@ page 50203 "Add dialogue page"
             field("End date"; Date_to)
             {
                 Caption = 'Contract end date';
+                Editable = EditCode;
+
+                trigger OnValidate()
+                var
+                    PriceRec: Record "Price catalogue table";
+                    Days: Integer;
+                begin
+                    PriceRec.SetRange("Equipment ID", Equipment);
+                    PriceRec.SetRange("Time period", Time);
+                    PriceRec.FindFirst();
+                    if PriceRec."Time period" = '1 DAY+' then begin
+                        Days := Date_to - Date_from;
+                        if Days = 1 then PriceRec."Daily price" := 3.50;
+                        End_price := (PriceRec."Daily price" * Days) + PriceRec.Fee;
+                    end;
+                end;
+            }
+
+            field(Equipment; Equipment)
+            {
+                Caption = 'Equipment';
+                TableRelation = "equipment catalogue table"."Equipment ID";
+                trigger OnValidate()
+                var
+                    PriceRec: Record "Price catalogue table";
+                begin
+                    If (time = '') = false then begin
+                        PriceRec.SetRange("Equipment ID", Equipment);
+                        PriceRec.SetRange("Time period", Time);
+                        PriceRec.FindFirst();
+                        if PriceRec."Time period" = '1 DAY' then begin
+                            EditCode := false;
+                            End_price := PriceRec."Daily price" + PriceRec.Fee;
+                            Date_to := CalcDate('1D', Date_from);
+                        end;
+                        if PriceRec."Time period" = '1 WEEK' then begin
+                            EditCode := false;
+                            End_price := (PriceRec."Daily price" * 7) + PriceRec.Fee;
+                            Date_to := CalcDate('7D', Date_from);
+                        end;
+                        if PriceRec."Time period" = '2 WEEKS' then begin
+                            EditCode := false;
+                            End_price := (PriceRec."Daily price" * 14) + PriceRec.Fee;
+                            Date_to := CalcDate('14D', Date_from);
+                        end;
+                        if PriceRec."Time period" = '1 MONTH' then begin
+                            EditCode := false;
+                            End_price := (PriceRec."Daily price" * 30) + PriceRec.Fee;
+                            Date_to := CalcDate('30D', Date_from);
+                        end;
+                        if PriceRec."Time period" = '1 YEAR' then begin
+                            EditCode := false;
+                            End_price := (PriceRec."Daily price" * 365) + PriceRec.Fee;
+                            Date_to := CalcDate('365D', Date_from);
+                        end;
+                        if PriceRec."Time period" = '1 DAY+' then begin
+                            EditCode := true;
+                            Date_to := 0D;
+                            End_price := 0.00;
+                        end;
+                    end;
+                end;
+            }
+
+            field(Time; Time)
+            {
+                Caption = 'Rent time';
+                TableRelation = "Rent time options".option;
+
+                trigger OnValidate()
+                var
+                    PriceRec: Record "Price catalogue table";
+                begin
+                    If (Equipment = '') = false then begin
+                        PriceRec.SetFilter("Equipment ID", Equipment);
+                        PriceRec.SetFilter("Time period", Time);
+                        PriceRec.FindFirst();
+                        if PriceRec."Time period" = '1 DAY' then begin
+                            EditCode := false;
+                            End_price := PriceRec."Daily price" + PriceRec.Fee;
+                            Date_to := CalcDate('1D', Date_from);
+                        end;
+                        if PriceRec."Time period" = '1 WEEK' then begin
+                            EditCode := false;
+                            End_price := (PriceRec."Daily price" * 7) + PriceRec.Fee;
+                            Date_to := CalcDate('7D', Date_from);
+                        end;
+                        if PriceRec."Time period" = '2 WEEKS' then begin
+                            EditCode := false;
+                            End_price := (PriceRec."Daily price" * 14) + PriceRec.Fee;
+                            Date_to := CalcDate('14D', Date_from);
+                        end;
+                        if PriceRec."Time period" = '1 MONTH' then begin
+                            EditCode := false;
+                            End_price := (PriceRec."Daily price" * 30) + PriceRec.Fee;
+                            Date_to := CalcDate('30D', Date_from);
+                        end;
+                        if PriceRec."Time period" = '1 YEAR' then begin
+                            EditCode := false;
+                            End_price := (PriceRec."Daily price" * 365) + PriceRec.Fee;
+                            Date_to := CalcDate('365D', Date_from);
+                        end;
+                        if PriceRec."Time period" = '1 DAY+' then begin
+                            EditCode := true;
+                            Date_to := 0D;
+                            End_price := 0.00;
+                        end;
+                    end;
+                end;
+            }
+
+            field(End_price; End_price)
+            {
+                Editable = false;
             }
         }
     }
@@ -75,8 +182,15 @@ page 50203 "Add dialogue page"
         end;
     end;
 
+    trigger OnOpenPage()
+    begin
+        EditCode := false;
+    end;
+
     var
+        EditCode: Boolean;
         Reco: Record "Rental contracts";
+        End_price: Decimal;
         Client: code[20];
         Client_name: text[100];
         Equipment: code[20];
@@ -84,4 +198,5 @@ page 50203 "Add dialogue page"
         Date_to: date;
         NoSeriesMgt: codeunit NoSeriesManagement;
         NewNumberCode: code[20];
+        Time: code[20];
 }
