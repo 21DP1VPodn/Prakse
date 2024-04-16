@@ -54,40 +54,49 @@ page 50203 "Add dialogue page"
                 trigger OnValidate()
                 var
                     PriceRec: Record "Price catalogue table";
+                    EqRec: Record "equipment catalogue table";
                 begin
                     If (time = '') = false then begin
                         PriceRec.SetRange("Equipment ID", Equipment);
                         PriceRec.SetRange("Time period", Time);
                         PriceRec.FindFirst();
-                        if PriceRec."Time period" = '1 DAY' then begin
-                            EditCode := false;
-                            End_price := PriceRec."Daily price" + PriceRec.Fee;
-                            Date_to := CalcDate('1D', Date_from);
-                        end;
-                        if PriceRec."Time period" = '1 WEEK' then begin
-                            EditCode := false;
-                            End_price := (PriceRec."Daily price" * 7) + PriceRec.Fee;
-                            Date_to := CalcDate('7D', Date_from);
-                        end;
-                        if PriceRec."Time period" = '2 WEEKS' then begin
-                            EditCode := false;
-                            End_price := (PriceRec."Daily price" * 14) + PriceRec.Fee;
-                            Date_to := CalcDate('14D', Date_from);
-                        end;
-                        if PriceRec."Time period" = '1 MONTH' then begin
-                            EditCode := false;
-                            End_price := (PriceRec."Daily price" * 30) + PriceRec.Fee;
-                            Date_to := CalcDate('30D', Date_from);
-                        end;
-                        if PriceRec."Time period" = '1 YEAR' then begin
-                            EditCode := false;
-                            End_price := (PriceRec."Daily price" * 365) + PriceRec.Fee;
-                            Date_to := CalcDate('365D', Date_from);
-                        end;
-                        if PriceRec."Time period" = '1 DAY+' then begin
-                            EditCode := true;
-                            Date_to := 0D;
-                            End_price := 0.00;
+                        EqRec.SetRange("Equipment ID", Equipment);
+                        EqRec.FindFirst();
+                        if EqRec.Status = 'available' then begin
+                            if PriceRec."Time period" = '1 DAY' then begin
+                                EditCode := false;
+                                End_price := PriceRec."Daily price" + PriceRec.Fee;
+                                Date_to := CalcDate('1D', Date_from);
+                            end;
+                            if PriceRec."Time period" = '1 WEEK' then begin
+                                EditCode := false;
+                                End_price := (PriceRec."Daily price" * 7) + PriceRec.Fee;
+                                Date_to := CalcDate('7D', Date_from);
+                            end;
+                            if PriceRec."Time period" = '2 WEEKS' then begin
+                                EditCode := false;
+                                End_price := (PriceRec."Daily price" * 14) + PriceRec.Fee;
+                                Date_to := CalcDate('14D', Date_from);
+                            end;
+                            if PriceRec."Time period" = '1 MONTH' then begin
+                                EditCode := false;
+                                End_price := (PriceRec."Daily price" * 30) + PriceRec.Fee;
+                                Date_to := CalcDate('30D', Date_from);
+                            end;
+                            if PriceRec."Time period" = '1 YEAR' then begin
+                                EditCode := false;
+                                End_price := (PriceRec."Daily price" * 365) + PriceRec.Fee;
+                                Date_to := CalcDate('365D', Date_from);
+                            end;
+                            if PriceRec."Time period" = '1 DAY+' then begin
+                                EditCode := true;
+                                Date_to := 0D;
+                                End_price := 0.00;
+                            end;
+                        end
+                        else begin
+                            message('Equipment unavailable, will become available %1', EqRec."Unavailable untill");
+                            Equipment := '';
                         end;
                     end;
                 end;
@@ -101,40 +110,49 @@ page 50203 "Add dialogue page"
                 trigger OnValidate()
                 var
                     PriceRec: Record "Price catalogue table";
+                    EqRec: Record "equipment catalogue table";
                 begin
                     If (Equipment = '') = false then begin
-                        PriceRec.SetFilter("Equipment ID", Equipment);
-                        PriceRec.SetFilter("Time period", Time);
+                        PriceRec.SetRange("Equipment ID", Equipment);
+                        PriceRec.SetRange("Time period", Time);
                         PriceRec.FindFirst();
-                        if PriceRec."Time period" = '1 DAY' then begin
-                            EditCode := false;
-                            End_price := PriceRec."Daily price" + PriceRec.Fee;
-                            Date_to := CalcDate('1D', Date_from);
-                        end;
-                        if PriceRec."Time period" = '1 WEEK' then begin
-                            EditCode := false;
-                            End_price := (PriceRec."Daily price" * 7) + PriceRec.Fee;
-                            Date_to := CalcDate('7D', Date_from);
-                        end;
-                        if PriceRec."Time period" = '2 WEEKS' then begin
-                            EditCode := false;
-                            End_price := (PriceRec."Daily price" * 14) + PriceRec.Fee;
-                            Date_to := CalcDate('14D', Date_from);
-                        end;
-                        if PriceRec."Time period" = '1 MONTH' then begin
-                            EditCode := false;
-                            End_price := (PriceRec."Daily price" * 30) + PriceRec.Fee;
-                            Date_to := CalcDate('30D', Date_from);
-                        end;
-                        if PriceRec."Time period" = '1 YEAR' then begin
-                            EditCode := false;
-                            End_price := (PriceRec."Daily price" * 365) + PriceRec.Fee;
-                            Date_to := CalcDate('365D', Date_from);
-                        end;
-                        if PriceRec."Time period" = '1 DAY+' then begin
-                            EditCode := true;
-                            Date_to := 0D;
-                            End_price := 0.00;
+                        EqRec.SetRange("Equipment ID", Equipment);
+                        EqRec.FindFirst();
+                        if EqRec.Status = 'available' then begin
+                            if PriceRec."Time period" = '1 DAY' then begin
+                                EditCode := false;
+                                End_price := PriceRec."Daily price" + PriceRec.Fee;
+                                Date_to := CalcDate('1D', Date_from);
+                            end;
+                            if PriceRec."Time period" = '1 WEEK' then begin
+                                EditCode := false;
+                                End_price := (PriceRec."Daily price" * 7) + PriceRec.Fee;
+                                Date_to := CalcDate('7D', Date_from);
+                            end;
+                            if PriceRec."Time period" = '2 WEEKS' then begin
+                                EditCode := false;
+                                End_price := (PriceRec."Daily price" * 14) + PriceRec.Fee;
+                                Date_to := CalcDate('14D', Date_from);
+                            end;
+                            if PriceRec."Time period" = '1 MONTH' then begin
+                                EditCode := false;
+                                End_price := (PriceRec."Daily price" * 30) + PriceRec.Fee;
+                                Date_to := CalcDate('30D', Date_from);
+                            end;
+                            if PriceRec."Time period" = '1 YEAR' then begin
+                                EditCode := false;
+                                End_price := (PriceRec."Daily price" * 365) + PriceRec.Fee;
+                                Date_to := CalcDate('365D', Date_from);
+                            end;
+                            if PriceRec."Time period" = '1 DAY+' then begin
+                                EditCode := true;
+                                Date_to := 0D;
+                                End_price := 0.00;
+                            end;
+                        end
+                        else begin
+                            message('Equipment unavailable, will become available %1', EqRec."Unavailable untill");
+                            Time := '';
                         end;
                     end;
                 end;
@@ -155,6 +173,8 @@ page 50203 "Add dialogue page"
     trigger OnQueryClosePage(CloseAction: Action): Boolean;
     var
         InvoRecord: Record "Sales Header";
+        EqRec: Record "equipment catalogue table";
+        Rec: Record "equipment catalogue table";
     begin
         if CLoseAction = CloseAction::OK then begin
             NoSeriesMgt.InitSeries('CONTR', '', Today(), Reco."Contract ID", NewNumberCode);
@@ -164,7 +184,7 @@ page 50203 "Add dialogue page"
             Reco."equipment ID" := Equipment;
             Reco."rental begin date" := Date_from;
             Reco."Rental end date" := Date_to;
-            if (Date_from < Today) and (Date_to > Today) then Reco.Status := 'active';
+            if (Date_from <= Today) and (Date_to > Today) then Reco.Status := 'active';
             if (Date_from > Today) then Reco.Status := 'planned';
             if (Date_from < Today) and (Date_to < Today) then Reco.Status := 'finished';
             Reco.Insert();
@@ -178,6 +198,15 @@ page 50203 "Add dialogue page"
             InvoRecord."VAT Reporting Date" := Today;
             InvoRecord."Due Date" := Today;
             InvoRecord.Modify();
+
+            EqRec.SetRange("Equipment ID", Equipment);
+            EqRec.FindFirst();
+            Rec.init();
+            Rec.TransferFields(EqRec);
+            Rec.Status := 'unavailable';
+            Rec."Unavailable untill" := Date_to;
+            Rec.Modify();
+
             page.Run(page::"Sales Invoice", InvoRecord);
         end;
     end;

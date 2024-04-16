@@ -26,6 +26,11 @@ table 50200 "equipment catalogue table"
         {
 
         }
+
+        field(6; "Unavailable untill"; Date)
+        {
+
+        }
     }
 
     keys
