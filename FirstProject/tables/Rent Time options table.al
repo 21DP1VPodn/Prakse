@@ -6,5 +6,10 @@ table 50202 "Rent time options"
         {
 
         }
+
+        field(2; Time; integer)
+        {
+            Caption = 'actual time';
+        }
     }
 }

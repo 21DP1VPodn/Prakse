@@ -16,6 +16,11 @@ page 50204 "Time options"
                 {
                     Caption = 'Option';
                 }
+
+                field(Time; Rec.Time)
+                {
+                    Caption = 'number of days';
+                }
             }
         }
     }

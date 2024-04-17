@@ -55,6 +55,7 @@ page 50203 "Add dialogue page"
                 var
                     PriceRec: Record "Price catalogue table";
                     EqRec: Record "equipment catalogue table";
+                    TimeRec: Record "Rent time options";
                 begin
                     If (time = '') = false then begin
                         PriceRec.SetRange("Equipment ID", Equipment);
@@ -63,35 +64,16 @@ page 50203 "Add dialogue page"
                         EqRec.SetRange("Equipment ID", Equipment);
                         EqRec.FindFirst();
                         if EqRec.Status = 'available' then begin
-                            if PriceRec."Time period" = '1 DAY' then begin
-                                EditCode := false;
-                                End_price := PriceRec."Daily price" + PriceRec.Fee;
-                                Date_to := CalcDate('1D', Date_from);
-                            end;
-                            if PriceRec."Time period" = '1 WEEK' then begin
-                                EditCode := false;
-                                End_price := (PriceRec."Daily price" * 7) + PriceRec.Fee;
-                                Date_to := CalcDate('7D', Date_from);
-                            end;
-                            if PriceRec."Time period" = '2 WEEKS' then begin
-                                EditCode := false;
-                                End_price := (PriceRec."Daily price" * 14) + PriceRec.Fee;
-                                Date_to := CalcDate('14D', Date_from);
-                            end;
-                            if PriceRec."Time period" = '1 MONTH' then begin
-                                EditCode := false;
-                                End_price := (PriceRec."Daily price" * 30) + PriceRec.Fee;
-                                Date_to := CalcDate('30D', Date_from);
-                            end;
-                            if PriceRec."Time period" = '1 YEAR' then begin
-                                EditCode := false;
-                                End_price := (PriceRec."Daily price" * 365) + PriceRec.Fee;
-                                Date_to := CalcDate('365D', Date_from);
-                            end;
                             if PriceRec."Time period" = '1 DAY+' then begin
                                 EditCode := true;
                                 Date_to := 0D;
                                 End_price := 0.00;
+                            end
+                            else begin
+                                EditCode := false;
+                                TimeRec.Get(PriceRec."Time period");
+                                End_price := (PriceRec."Daily price" * TimeRec.Time) + PriceRec.Fee;
+                                Date_to := CalcDate((System.Format(TimeRec.Time) + 'D'), Date_from);
                             end;
                         end
                         else begin
