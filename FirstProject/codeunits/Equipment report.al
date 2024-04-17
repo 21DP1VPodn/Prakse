@@ -61,11 +61,12 @@ report 50200 "Equipment report"
                     IncludeCaption = true;
                 }
             }
-
-            trigger OnPreDataItem()
-            begin
-                SetRange("equipment catalogue table"."Equipment ID", Equipment);
-            end;
+            /*
+                        trigger OnPreDataItem()
+                        begin
+                            SetRange("equipment catalogue table"."Equipment ID", Equipment);
+                        end;
+                        */
         }
     }
 
@@ -89,13 +90,15 @@ report 50200 "Equipment report"
             }
         }
     }
+    /*
+        trigger OnPreReport()
+        var
+            Reco: Record "equipment catalogue table";
+        begin
+            if not (Equipment <> '') then error('Please select the equipment');
+        end;
 
-    trigger OnPreReport()
-    var
-        Reco: Record "equipment catalogue table";
-    begin
-        if not (Equipment <> '') then error('Please select the equipment');
-    end;
+    */
 
     var
         Equipment: code[20];
