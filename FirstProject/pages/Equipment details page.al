@@ -36,7 +36,7 @@ page 50206 "Equipment details"
                 Editable = false;
             }
 
-            part("Price list"; "Price list")
+            part("Contract list"; "Contract list part")
             {
                 Caption = 'Price list';
                 SubPageLink = "Equipment ID" = field("Equipment ID");

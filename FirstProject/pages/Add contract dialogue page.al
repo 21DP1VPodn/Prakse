@@ -24,6 +24,34 @@ page 50203 "Add dialogue page"
             field("Beign date"; Date_from)
             {
                 Caption = 'Cotract begin date';
+
+                trigger onValidate()
+                var
+                    PriceRec: Record "Price catalogue table";
+                    EqRec: Record "equipment catalogue table";
+                    TimeRec: Record "Rent time options";
+                    Days: integer;
+                begin
+                    If ((time = '') = false) and ((Equipment = '') = false) then begin
+                        PriceRec.SetRange("Equipment ID", Equipment);
+                        PriceRec.SetRange("Time period", Time);
+                        PriceRec.FindFirst();
+                        EqRec.SetRange("Equipment ID", Equipment);
+                        EqRec.FindFirst();
+                        if PriceRec."Time period" = '1 DAY+' then begin
+                            if (Date_to = 0D) = false then begin
+                                Days := Date_to - Date_from;
+                                if Days = 1 then PriceRec."Daily price" := 3.50;
+                                End_price := (PriceRec."Daily price" * Days) + PriceRec.Fee;
+                            end;
+                        end
+                        else begin
+                            TimeRec.Get(PriceRec."Time period");
+                            End_price := (PriceRec."Daily price" * TimeRec.Time) + PriceRec.Fee;
+                            Date_to := CalcDate((System.Format(TimeRec.Time) + 'D'), Date_from);
+                        end;
+                    end;
+                end;
             }
 
             field("End date"; Date_to)
@@ -35,14 +63,53 @@ page 50203 "Add dialogue page"
                 var
                     PriceRec: Record "Price catalogue table";
                     Days: Integer;
+                    ContRec: Record "Rental contracts";
+                    EqRec: Record "equipment catalogue table";
+                    TimeRec: Record "Rent time options";
+                    availability_status: Boolean;
+                    Count: Integer;
+                    CheckRec: Record "Rental contracts";
+                    test_date: Date;
                 begin
                     PriceRec.SetRange("Equipment ID", Equipment);
                     PriceRec.SetRange("Time period", Time);
                     PriceRec.FindFirst();
-                    if PriceRec."Time period" = '1 DAY+' then begin
+                    EqRec.SetRange("Equipment ID", Equipment);
+                    EqRec.FindFirst();
+                    ContRec.SetRange("equipment ID", Equipment);
+                    ContRec.FindSet();
+                    max_date := ContRec."Rental end date";
+                    if (PriceRec."Time period" = '1 DAY+') and (EqRec.Status = 'availbale') then begin
                         Days := Date_to - Date_from;
                         if Days = 1 then PriceRec."Daily price" := 3.50;
                         End_price := (PriceRec."Daily price" * Days) + PriceRec.Fee;
+                    end
+                    else begin
+                        availability_status := false;
+                        Count := 0;
+                        if (ContRec."Rental end date" < Date_from) or (ContRec."rental begin date" > Date_to) then begin
+                            Count := Count + 1;
+                        end;
+                        while (ContRec.Next() = 0) = false do begin
+                            if ContRec."Rental end date" > max_date then max_date := ContRec."Rental end date";
+                            if (ContRec."Rental end date" < Date_from) or (ContRec."rental begin date" > Date_to) then begin
+                                Count := Count + 1;
+                            end;
+                        end;
+                        if Count = ContRec.Count() then begin
+                            availability_status := true;
+                        end;
+                        if availability_status = false then begin
+                            message('Equipment unavailable, will become available %1', EqRec."Unavailable untill");
+                            Equipment := '';
+                            Date_to := 0D;
+                            End_price := 0;
+                        end
+                        else begin
+                            Days := Date_to - Date_from;
+                            if Days = 1 then PriceRec."Daily price" := 3.50;
+                            End_price := (PriceRec."Daily price" * Days) + PriceRec.Fee;
+                        end;
                     end;
                 end;
             }
@@ -56,6 +123,11 @@ page 50203 "Add dialogue page"
                     PriceRec: Record "Price catalogue table";
                     EqRec: Record "equipment catalogue table";
                     TimeRec: Record "Rent time options";
+                    ContRec: Record "Rental contracts";
+                    availability_status: Boolean;
+                    Count: Integer;
+                    CheckRec: Record "Rental contracts";
+                    test_date: Date;
                 begin
                     If (time = '') = false then begin
                         PriceRec.SetRange("Equipment ID", Equipment);
@@ -63,6 +135,9 @@ page 50203 "Add dialogue page"
                         PriceRec.FindFirst();
                         EqRec.SetRange("Equipment ID", Equipment);
                         EqRec.FindFirst();
+                        ContRec.SetRange("equipment ID", Equipment);
+                        ContRec.FindSet();
+                        max_date := ContRec."Rental end date";
                         if EqRec.Status = 'available' then begin
                             if PriceRec."Time period" = '1 DAY+' then begin
                                 EditCode := true;
@@ -77,8 +152,40 @@ page 50203 "Add dialogue page"
                             end;
                         end
                         else begin
-                            message('Equipment unavailable, will become available %1', EqRec."Unavailable untill");
-                            Equipment := '';
+                            if PriceRec."Time period" = '1 DAY+' then begin
+                                EditCode := true;
+                                Date_to := 0D;
+                                End_price := 0.00;
+                            end
+                            else begin
+                                availability_status := false;
+                                Count := 0;
+                                test_date := CalcDate((System.Format(TimeRec.Time) + 'D'), Date_from);
+                                if (ContRec."Rental end date" < Date_from) or (ContRec."rental begin date" > test_date) then begin
+                                    Count := Count + 1;
+                                end;
+                                while (ContRec.Next() = 0) = false do begin
+                                    if ContRec."Rental end date" > max_date then max_date := ContRec."Rental end date";
+                                    if (ContRec."Rental end date" < Date_from) or (ContRec."rental begin date" > test_date) then begin
+                                        Count := Count + 1;
+                                    end;
+                                end;
+                                if Count = ContRec.Count() then begin
+                                    availability_status := true;
+                                end;
+                                if availability_status = false then begin
+                                    message('Equipment unavailable, will become available %1', EqRec."Unavailable untill");
+                                    Equipment := '';
+                                    Date_to := 0D;
+                                    End_price := 0;
+                                end
+                                else begin
+                                    EditCode := false;
+                                    TimeRec.Get(PriceRec."Time period");
+                                    End_price := (PriceRec."Daily price" * TimeRec.Time) + PriceRec.Fee;
+                                    Date_to := CalcDate((System.Format(TimeRec.Time) + 'D'), Date_from);
+                                end;
+                            end;
                         end;
                     end;
                 end;
@@ -94,6 +201,11 @@ page 50203 "Add dialogue page"
                     PriceRec: Record "Price catalogue table";
                     EqRec: Record "equipment catalogue table";
                     TimeRec: Record "Rent time options";
+                    ContRec: Record "Rental contracts";
+                    availability_status: Boolean;
+                    Count: Integer;
+                    CheckRec: Record "Rental contracts";
+                    test_date: Date;
                 begin
                     If (Equipment = '') = false then begin
                         PriceRec.SetRange("Equipment ID", Equipment);
@@ -101,6 +213,9 @@ page 50203 "Add dialogue page"
                         PriceRec.FindFirst();
                         EqRec.SetRange("Equipment ID", Equipment);
                         EqRec.FindFirst();
+                        ContRec.SetRange("equipment ID", Equipment);
+                        ContRec.FindSet();
+                        max_date := ContRec."Rental end date";
                         If (time = '') = false then begin
                             PriceRec.SetRange("Equipment ID", Equipment);
                             PriceRec.SetRange("Time period", Time);
@@ -121,8 +236,40 @@ page 50203 "Add dialogue page"
                                 end;
                             end
                             else begin
-                                message('Equipment unavailable, will become available %1', EqRec."Unavailable untill");
-                                Time := '';
+                                if PriceRec."Time period" = '1 DAY+' then begin
+                                    EditCode := true;
+                                    Date_to := 0D;
+                                    End_price := 0.00;
+                                end
+                                else begin
+                                    availability_status := false;
+                                    Count := 0;
+                                    test_date := CalcDate((System.Format(TimeRec.Time) + 'D'), Date_from);
+                                    if (ContRec."Rental end date" < Date_from) or (ContRec."rental begin date" > test_date) then begin
+                                        Count := Count + 1;
+                                    end;
+                                    while (ContRec.Next() = 0) = false do begin
+                                        if ContRec."Rental end date" > max_date then max_date := ContRec."Rental end date";
+                                        if (ContRec."Rental end date" < Date_from) or (ContRec."rental begin date" > test_date) then begin
+                                            Count := Count + 1;
+                                        end;
+                                    end;
+                                    if Count = ContRec.Count() then begin
+                                        availability_status := true;
+                                    end;
+                                    if availability_status = false then begin
+                                        message('Equipment unavailable, will become available %1', EqRec."Unavailable untill");
+                                        Equipment := '';
+                                        Date_to := 0D;
+                                        End_price := 0;
+                                    end
+                                    else begin
+                                        EditCode := false;
+                                        TimeRec.Get(PriceRec."Time period");
+                                        End_price := (PriceRec."Daily price" * TimeRec.Time) + PriceRec.Fee;
+                                        Date_to := CalcDate((System.Format(TimeRec.Time) + 'D'), Date_from);
+                                    end;
+                                end;
                             end;
                         end;
                     end;
@@ -175,7 +322,7 @@ page 50203 "Add dialogue page"
             Rec.init();
             Rec.TransferFields(EqRec);
             Rec.Status := 'unavailable';
-            Rec."Unavailable untill" := Date_to;
+            if Date_to > max_date then Rec."Unavailable untill" := Date_to;
             Rec.Modify();
 
             page.Run(page::"Sales Invoice", InvoRecord);
@@ -188,6 +335,8 @@ page 50203 "Add dialogue page"
     end;
 
     var
+        max_date: date;
+        i: Integer;
         EditCode: Boolean;
         Reco: Record "Rental contracts";
         End_price: Decimal;
