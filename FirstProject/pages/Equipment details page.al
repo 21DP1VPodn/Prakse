@@ -9,36 +9,47 @@ page 50206 "Equipment details"
     {
         area(Content)
         {
-            field("Equipment ID"; Rec."Equipment ID")
+            group("General")
             {
-                Caption = 'Equipment ID';
-            }
+                Caption = 'General inforamtion';
+                field("Equipment ID"; Rec."Equipment ID")
+                {
+                    Caption = 'Equipment ID';
+                    Importance = Promoted;
+                }
 
-            field(Name; Rec.Name)
-            {
-                Caption = 'Name';
-            }
+                field(Name; Rec.Name)
+                {
+                    Caption = 'Name';
+                    Importance = Promoted;
+                }
 
-            field(Description; Rec.Description)
-            {
-                Caption = 'Description';
+                field(Description; Rec.Description)
+                {
+                    Caption = 'Description';
+                    Importance = Additional;
+                }
             }
-
-            field(Status; Rec.Status)
+            group(status_group)
             {
                 Caption = 'Status';
-                editable = false;
-            }
+                field(Status; Rec.Status)
+                {
+                    Caption = 'Status';
+                    editable = false;
+                    Importance = Promoted;
+                }
 
-            field("Unavailable untill"; Rec."Unavailable untill")
-            {
-                Caption = 'Unavailable untill';
-                Editable = false;
+                field("Unavailable untill"; Rec."Unavailable untill")
+                {
+                    Caption = 'Unavailable untill';
+                    Editable = false;
+                }
             }
 
             part("Contract list"; "Contract list part")
             {
-                Caption = 'Price list';
+                Caption = 'Contract list';
                 SubPageLink = "Equipment ID" = field("Equipment ID");
                 Editable = false;
             }

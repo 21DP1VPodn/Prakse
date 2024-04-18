@@ -9,34 +9,46 @@ page 50202 "Rental contract card"
     {
         area(Content)
         {
-            field("Contract ID"; Rec."Contract ID")
+            Group(General)
             {
-                Caption = 'ID';
+                Caption = 'General';
+                field("Contract ID"; Rec."Contract ID")
+                {
+                    Caption = 'ID';
+                    Importance = Promoted;
+                }
+
+                field("Client ID"; Rec."Client ID")
+                {
+                    Caption = 'Customer ID';
+                    Importance = Promoted;
+                }
+
+                field("equipment ID"; Rec."equipment ID")
+                {
+                    Caption = 'Equipment';
+                    Importance = Promoted;
+                }
             }
 
-            field("Client ID"; Rec."Client ID")
+            Group("Execution time")
             {
-                Caption = 'Customer ID';
-            }
+                Caption = 'Execution time';
+                field("rental begin date"; Rec."rental begin date")
+                {
+                    Caption = 'Contract begin date';
+                }
 
-            field("equipment ID"; Rec."equipment ID")
-            {
-                Caption = 'Equipment';
-            }
+                field("Rental end date"; Rec."Rental end date")
+                {
+                    Caption = 'Contract end date';
+                }
 
-            field("rental begin date"; Rec."rental begin date")
-            {
-                Caption = 'Contract begin date';
-            }
-
-            field("Rental end date"; Rec."Rental end date")
-            {
-                Caption = 'Contract end date';
-            }
-
-            field(Status; Rec.Status)
-            {
-                Caption = 'Status';
+                field(Status; Rec.Status)
+                {
+                    Caption = 'Status';
+                    Importance = Promoted;
+                }
             }
         }
     }
