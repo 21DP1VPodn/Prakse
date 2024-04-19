@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="FirstProject">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 1428028161 - Field 3648931784 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Daily price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table equipment catalogue table - Field Daily price - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1428028161 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table equipment catalogue table - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1428028161 - Field 4119363961 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Equipment ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table equipment catalogue table - Field Equipment ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1428028161 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table equipment catalogue table - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1428028161 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table equipment catalogue table - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1428028161 - Field 1620511224 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unavailable untill</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table equipment catalogue table - Field Unavailable untill - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2682961644 - Field 3648931784 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Daily price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Price catalogue table - Field Daily price - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2682961644 - Field 4119363961 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Equipment ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Price catalogue table - Field Equipment ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2682961644 - Field 3057692898 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fee</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Price catalogue table - Field Fee - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2682961644 - Field 3641927271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Price catalogue table - Field ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2682961644 - Field 2774922756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Time period</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Price catalogue table - Field Time period - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3852838284 - Field 1313346621 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>option</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Rent time options - Field option - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3852838284 - Field 1230148255 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>actual time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Rent time options - Field Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 41317827 - Field 652819368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Rental contracts - Field Client ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 41317827 - Field 2292651409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contract ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Rental contracts - Field Contract ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 41317827 - Field 199492825 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>equipment ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Rental contracts - Field equipment ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 41317827 - Field 587049989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>rental begin date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Rental contracts - Field rental begin date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 41317827 - Field 2519173165 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental end date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Rental contracts - Field Rental end date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 41317827 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Rental contracts - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3473750310 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add page</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Add dialogue page - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3473750310 - Control 1169754739 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Client</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Add dialogue page - Control Client - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3473750310 - Control 652819368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Client ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Add dialogue page - Control Client ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3473750310 - Control 2481691107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Client name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Add dialogue page - Control Client_name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3473750310 - Control 1826403361 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dates</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Add dialogue page - Control Dates - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3473750310 - Control 727606613 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cotract begin date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Add dialogue page - Control Beign date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3473750310 - Control 2835823741 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contract end date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Add dialogue page - Control End date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3473750310 - Control 2198405087 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Equipment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Add dialogue page - Control Equipment group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3473750310 - Control 2876943422 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Equipment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Add dialogue page - Control Equipment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3473750310 - Control 3009594854 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Equipment name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Add dialogue page - Control Equipment_name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3473750310 - Control 460176555 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Financial</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Add dialogue page - Control financial - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3473750310 - Control 1230148255 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rent time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Add dialogue page - Control Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4213447297 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contract list part</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contract list part - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4213447297 - Control 199492825 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Equipment ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contract list part - Control equipment ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4213447297 - Control 587049989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unavailable from</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contract list part - Control rental begin date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4213447297 - Control 2519173165 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unavailable to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Contract list part - Control Rental end date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 382258707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Equipment catalouge</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment Catalouge - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 382258707 - Control 3648931784 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Price for 1 day</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment Catalouge - Control Daily price - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 382258707 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment Catalouge - Control Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 382258707 - Control 4119363961 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment Catalouge - Control Equipment ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 382258707 - Control 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Equipment name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment Catalouge - Control Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 382258707 - Control 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment Catalouge - Control Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 382258707 - Control 1620511224 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unavailable untill</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment Catalouge - Control Unavailable untill - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 382258707 - Action 4047788987 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Makes a piece of equipment available</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment Catalouge - Action available - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 382258707 - Action 4047788987 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Make available</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment Catalouge - Action available - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 382258707 - Action 1580543246 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Makes a piece of equipment unavailable</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment Catalouge - Action unavailable - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 382258707 - Action 1580543246 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Make unavailable</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment Catalouge - Action unavailable - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2108580908 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Equipment details</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment details - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2108580908 - Control 1472574788 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contract list</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment details - Control Contract list - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2108580908 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General inforamtion</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment details - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2108580908 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment details - Control Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2108580908 - Control 4119363961 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Equipment ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment details - Control Equipment ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2108580908 - Control 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment details - Control Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2108580908 - Control 3096887832 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment details - Control status_group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2108580908 - Control 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment details - Control Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2108580908 - Control 1620511224 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unavailable untill</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Equipment details - Control Unavailable untill - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4286476762 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Price catalogue</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Price catalogue - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4286476762 - Control 3648931784 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Price for 1 day</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Price catalogue - Control Daily price - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4286476762 - Control 4119363961 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Equipment ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Price catalogue - Control Equipment ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4286476762 - Control 3057692898 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fee</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Price catalogue - Control Fee - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4286476762 - Control 3641927271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Price catalogue - Control ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4286476762 - Control 2774922756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Time period</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Price catalogue - Control Time period - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1773609993 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Price list</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Price list - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1773609993 - Control 3648931784 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Daily price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Price list - Control Daily price - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1773609993 - Control 4119363961 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Equipment ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Price list - Control Equipment ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1773609993 - Control 3057692898 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fee</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Price list - Control Fee - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1773609993 - Control 3641927271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Plan name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Price list - Control ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1773609993 - Control 2774922756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Time period</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Price list - Control Time period - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4068675954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental contract</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Rental contract card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4068675954 - Control 2814386209 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Execution time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Rental contract card - Control Execution time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4068675954 - Control 587049989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contract begin date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Rental contract card - Control rental begin date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4068675954 - Control 2519173165 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contract end date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Rental contract card - Control Rental end date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4068675954 - Control 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Rental contract card - Control Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4068675954 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Rental contract card - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4068675954 - Control 652819368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Rental contract card - Control Client ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4068675954 - Control 2292651409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Rental contract card - Control Contract ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4068675954 - Control 199492825 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Equipment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Rental contract card - Control equipment ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1432733293 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental contracts</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page rental contracts list - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1432733293 - Control 652819368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page rental contracts list - Control Client ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1432733293 - Control 2292651409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page rental contracts list - Control Contract ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1432733293 - Control 199492825 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Equipment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page rental contracts list - Control equipment ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1432733293 - Control 587049989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contract begin date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page rental contracts list - Control rental begin date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1432733293 - Control 2519173165 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contract end date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page rental contracts list - Control Rental end date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1432733293 - Control 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page rental contracts list - Control Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1432733293 - Action 32587538 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adds a new contract</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page rental contracts list - Action New Contract - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1432733293 - Action 32587538 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New Contract</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page rental contracts list - Action New Contract - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 641653799 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Time options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Time options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 641653799 - Control 828292189 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Option</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Time options - Control Option - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 641653799 - Control 1230148255 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>number of days</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Time options - Control Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4201866849 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Availability report</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report availability report - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3480854936 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Equipment report</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Equipment report - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3480854936 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Equipment report - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3480854936 - Control 2876943422 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Equipment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Equipment report - Control Equipment - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
