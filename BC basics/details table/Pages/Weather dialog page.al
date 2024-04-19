@@ -23,69 +23,36 @@ page 60111 "Weather dialog"
     trigger OnQueryClosePage(CloseAction: Action): Boolean
     var
         MainPage: page "Weather list";
+        Client: HttpClient;
+        Response: HttpResponseMessage;
+        J: JsonObject;
+        ResponseTxT: Text;
+        Isolatedkey: text[50];
+        Isolatedkey_bool: Boolean;
     begin
         if CloseAction = CloseAction::OK then begin
-            Weat.Init();
-            NoSeriesMgt.InitSeries('WEAT', '', Today(), Weat."No.", NewNoSeriesCode);
-            Weat.Date := GetDate();
-            Weat.temp := Gettemp();
-            Weat.wind := Getwind();
-            Weat."No." := NoSeriesMGt.GetNextNo(NewNoSeriesCode, today(), true);
-            ;
-            Weat.Insert(true, false);
-        end;
-    end;
-
-    procedure GetDate(): Date
-    var
-        Client: HttpClient;
-        Response: HttpResponseMessage;
-        J: JsonObject;
-        ResponseTxT: Text;
-    begin
-        Request := 'http://api.weatherapi.com/v1/current.json?key=f2bde0bbf710401c9e770016240304&q=' + City + '&aqi=no';
-        if Client.Get(Request, Response) then begin
-            if Response.IsSuccessStatusCode() then begin
-                Response.Content().ReadAs(ResponseTxT);
-                J.ReadFrom(ResponseTxT);
-                J := GetJsonObject(J, 'location');
-                exit(GetJsonDate(J, 'localtime'));
-            end;
-        end;
-    end;
-
-    procedure Gettemp(): Text
-    var
-        Client: HttpClient;
-        Response: HttpResponseMessage;
-        J: JsonObject;
-        ResponseTxT: Text;
-    begin
-        Request := 'http://api.weatherapi.com/v1/current.json?key=f2bde0bbf710401c9e770016240304&q=' + City + '&aqi=no';
-        if Client.Get(Request, Response) then begin
-            if Response.IsSuccessStatusCode() then begin
-                Response.Content().ReadAs(ResponseTxT);
-                J.ReadFrom(ResponseTxT);
-                J := GetJsonObject(J, 'current');
-                exit(GetJsonTextField(J, 'temp_c'));
-            end;
-        end;
-    end;
-
-    procedure Getwind(): Text
-    var
-        Client: HttpClient;
-        Response: HttpResponseMessage;
-        J: JsonObject;
-        ResponseTxT: Text;
-    begin
-        Request := 'http://api.weatherapi.com/v1/current.json?key=f2bde0bbf710401c9e770016240304&q=' + City + '&aqi=no';
-        if Client.Get(Request, Response) then begin
-            if Response.IsSuccessStatusCode() then begin
-                Response.Content().ReadAs(ResponseTxT);
-                J.ReadFrom(ResponseTxT);
-                J := GetJsonObject(J, 'current');
-                exit(GetJsonTextField(J, 'wind_kph'));
+            IsolatedStorage.set('key', 'f2bde0bbf710401c9e770016240304', DataScope::Module);
+            Isolatedkey := get_key();
+            Request := 'http://api.weatherapi.com/v1/current.json?key=' + Isolatedkey + '&q=' + City + '&aqi=no';
+            if Client.Get(Request, Response) then begin
+                if Response.IsSuccessStatusCode() then begin
+                    Response.Content().ReadAs(ResponseTxT);
+                    J.ReadFrom(ResponseTxT);
+                    Weat.Init();
+                    NoSeriesMgt.InitSeries('WEAT', '', Today(), Weat."No.", NewNoSeriesCode);
+                    J := GetJsonObject(J, 'location');
+                    Weat.Date := GetJsonDate(J, 'localtime');
+                    Weat.City := GetJsonTextField(J, 'name');
+                    J.ReadFrom(ResponseTxT);
+                    J := GetJsonObject(J, 'current');
+                    Weat.temp := GetJsonTextField(J, 'temp_c');
+                    Weat.wind := GetJsonTextField(J, 'wind_kph');
+                    Weat."No." := NoSeriesMGt.GetNextNo(NewNoSeriesCode, today(), true);
+                    Weat.Insert(true, false);
+                end
+                else begin
+                    message('The City you provided was not found');
+                end;
             end;
         end;
     end;
@@ -129,6 +96,14 @@ page 60111 "Weather dialog"
         Evaluate(Month, DateParts.Get(2));
         Evaluate(Day, DateParts.Get(3));
         exit(DMY2Date(Day, Month, Year));
+    end;
+
+    procedure get_key(): text
+    var
+        IsolatedKey: text;
+    begin
+        if IsolatedStorage.Get('key', DataScope::Module, Isolatedkey) then
+            exit(Isolatedkey);
     end;
 
     var

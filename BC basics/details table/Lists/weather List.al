@@ -17,6 +17,11 @@ page 60105 "Weather list"
                     Caption = 'Line number';
                 }
 
+                field(City; Rec.City)
+                {
+                    Caption = 'City';
+                }
+
                 field("Date"; Rec.Date)
                 {
                     Caption = 'Forecast Date';

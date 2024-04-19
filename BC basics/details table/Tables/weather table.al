@@ -9,17 +9,21 @@ Table 60101 Weather
             Caption = 'Line number';
         }
 
-        field(2; "temp"; Text[40])
+        field(2; City; Text[50])
+        {
+            Caption = 'City';
+        }
+        field(3; "temp"; Text[40])
         {
             Caption = 'Temperature';
         }
 
-        field(3; "wind"; Text[40])
+        field(4; "wind"; Text[40])
         {
             Caption = 'wind speed';
         }
 
-        field(4; "Date"; Date)
+        field(5; "Date"; Date)
         {
             Caption = 'Forecast Date and Time';
         }
