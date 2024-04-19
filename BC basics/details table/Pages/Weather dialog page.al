@@ -31,7 +31,7 @@ page 60111 "Weather dialog"
         Isolatedkey_bool: Boolean;
     begin
         if CloseAction = CloseAction::OK then begin
-            IsolatedStorage.set('key', 'f2bde0bbf710401c9e770016240304', DataScope::Module);
+            Keys.Setkey();
             Isolatedkey := get_key();
             Request := 'http://api.weatherapi.com/v1/current.json?key=' + Isolatedkey + '&q=' + City + '&aqi=no';
             if Client.Get(Request, Response) then begin
@@ -112,4 +112,5 @@ page 60111 "Weather dialog"
         NewNoSeriesCode: Code[20];
         City: Text[50];
         Request: text[150];
+        Keys: codeunit Keys;
 }
