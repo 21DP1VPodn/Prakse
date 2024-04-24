@@ -13,17 +13,23 @@ page 50802 "JS test page"
             {
                 trigger OnControlReady()
                 begin
-                    Message('I am ready to execute!');
+                    Control.initialize(CurrPage.Demo);
+                    Logic.initialize(Control);
                 end;
 
-                trigger OnInvoke(Context: JsonObject)
+                trigger OnInvoke(Context: Text)
                 var
                     Response: JsonObject;
                 begin
                     if confirm('Invoking?') then;
-                    CurrPage.Demo.OnInvokeResult(Response);
+                    Logic.OnInvokeResult('Hello ' + Context + '!');
                 end;
             }
         }
     }
+
+    var
+        Control: Codeunit "Interface codeunit";
+
+        Logic: codeunit "Demo logic";
 }

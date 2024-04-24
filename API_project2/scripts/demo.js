@@ -1,22 +1,27 @@
+const invokeAl = getAlMethod("OnInvoke");
+
+function AL(name)
+{
+    return 'Hello ' + name + '!'; 
+}
+
 function initialize()
 {
     let root = document.getElementById('controlAddIn');
-    let button = document.getElementById('button');
+    let button = document.createElement('button');
     button.innerText = 'Invoke AL';
     root.appendChild(button);
-    button.addEventListener("click", click);
+    button.addEventListener('click', click);
 }
 
-function click()
-{
-    Microsoft.Dynamics.NAV.InvokeExtensibilityMethod(
-    'OnInvoke', 
-    [{name: Vlad}], 
-    false, 
-    () => alert('This message is from JS, AL is now done'));
+async function click()
+{ 
+    const invokeAl = getAlMethod("OnInvoke");
+    let result = await invokeAl('Vlad');
+    alert(result);
 }
 
-function OnInvokeResult()
+function OnInvokeResult(result)
 {
-    alert('AL invokes OnInvokeResult');
+    alert('AL invokes OnInvokeResult: ' + result);
 }

@@ -1,2 +1,2 @@
-initialize();
-Microsoft.Dynamics.NAV.InvokeExtensibilityMethod('OnControlReady', [], false);
+const ready = getAlMethod('OnControlReady');
+ready().then(initialize);6

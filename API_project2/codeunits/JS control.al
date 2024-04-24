@@ -12,7 +12,7 @@ controladdin Test
 
     event OnControlReady();
 
-    event OnInvoke(Context: JsonObject);
+    event OnInvoke(Context: Text);
 
-    procedure OnInvokeResult(Reslut: JsonObject);
+    procedure OnInvokeResult(Reslut: Text);
 }
