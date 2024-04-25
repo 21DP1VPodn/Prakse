@@ -9,7 +9,7 @@
             "server": "http://prakse/BC",
             "serverInstance": "BC",
             "authentication": "UserPassword",
-            "startupObjectId": 50802,
+            "startupObjectId": 50803,
             "schemaUpdateMode": "ForceSync",
             "startupObjectType": "Page",
             "breakOnError": "All",
