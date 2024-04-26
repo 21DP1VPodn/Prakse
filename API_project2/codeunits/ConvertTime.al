@@ -1,5 +1,7 @@
 codeunit 50803 "Time converter"
 {
+
+    //Šis codeunit pārveido laiku no time uz tekst pierakstīto ar vārdiem
     trigger OnRun()
     begin
         output := Transform_time(Time, Code);
@@ -18,13 +20,15 @@ codeunit 50803 "Time converter"
         index: integer;
         index_minutes: integer;
     begin
+        // nosakam default variables
         Clock := 'o clock';
         Hours := Format(Time, 0, '<Hours12>');
         Minutes := Format(Time, 0, '<Minutes,2>');
         Timestamp := Format(Time, 0, '<AM/PM>');
 
         //Output like human
-        if Code = 'H' then begin
+        if Code = 'H' then begin // like human
+            // nosakam stundu pieraksti ar vārdiem
             InitHour(Code);
             If Hours = '12' then begin
                 if Timestamp = 'AM' then begin
@@ -38,17 +42,20 @@ codeunit 50803 "Time converter"
                 Evaluate(index, Hours);
                 Hours_result := HoursText[index];
             end;
+            // nosakam minūtu pierkasti ar vardiem
             InitMinutes(Code);
             if Minutes = '00' then begin
                 minutes_result := MinutesText[31];
                 Connector := '';
             end
             else begin
+                // nosakam minutes kas ir mazākas par 30
                 Evaluate(index_minutes, Minutes);
                 if index_minutes <= 30 then begin
                     minutes_result := MinutesText[index_minutes];
                     Connector := 'past';
                 end
+                // nosakam minūtes kas ir lielākas par 30, skaitļojot stundu un dienas puses parveršanu pareizi pierakstei
                 else begin
                     index_minutes := index_minutes - 30;
                     index_minutes := 30 - index_minutes;
@@ -73,6 +80,7 @@ codeunit 50803 "Time converter"
                     end;
                 end;
             end;
+            // nosākam rezultātu ja kods ir H(human)
             if (hours_result = 'Noon') or (hours_result = 'Midnight') then begin
                 Timestamp := '';
                 Clock := '';
@@ -86,14 +94,16 @@ codeunit 50803 "Time converter"
         end;
 
         //Output like Computer
-        if Code = 'C' then begin
+        if Code = 'C' then begin // like computer
             InitHour(Code);
+            // nosakam stundu skaitu
             if Hours = '00' then
                 hours_result := HoursText[13]
             else begin
                 Evaluate(index, Hours);
                 hours_result := HoursText[index];
             end;
+            // nosakam minušu skaitu
             InitMinutes(Code);
             if Minutes = '00' then
                 minutes_result := MinutesText[60]
@@ -101,6 +111,7 @@ codeunit 50803 "Time converter"
                 Evaluate(index_minutes, Minutes);
                 minutes_result := MinutesText[index_minutes];
             end;
+            // nosakam rezultātu ja kods ir C(computer)
             if (Hours = '12') and (Minutes = '00') and (Timestamp = 'AM') then
                 result := 'Noon'
             else begin
@@ -114,13 +125,15 @@ codeunit 50803 "Time converter"
                 end;
             end;
         end;
+        // Izvadam rezultātu
         message(result);
     end;
 
+    // Šī procedūra definē stundu pieraksti ar vārdiem
     procedure InitHour(Code: code[1])
     begin
         Case Code of
-            'H':
+            'H': // pierakste like human
                 begin
                     HoursText[1] := 'One';
                     HoursText[2] := 'Two';
@@ -136,7 +149,7 @@ codeunit 50803 "Time converter"
                     HoursText[12] := 'Noon';
                     HoursText[13] := 'Midnight';
                 end;
-            'C':
+            'C': // pierakste like computer
                 begin
                     HoursText[1] := 'one';
                     HoursText[2] := 'two';
@@ -155,10 +168,11 @@ codeunit 50803 "Time converter"
         end;
     end;
 
+    // Šī procedūra definē stundu pieraksti ar vārdiem
     procedure InitMinutes(Code: code[1])
     begin
         Case code of
-            'H':
+            'H': // pierakste like human
                 begin
                     MinutesText[1] := 'one';
                     MinutesText[2] := 'two';
@@ -192,7 +206,7 @@ codeunit 50803 "Time converter"
                     MinutesText[30] := 'half';
                     MinutesText[31] := '';
                 end;
-            'C':
+            'C': // pierakste like computer
                 begin
                     MinutesText[1] := 'one';
                     MinutesText[2] := 'two';
@@ -257,7 +271,7 @@ codeunit 50803 "Time converter"
                 end;
         End;
     end;
-
+    // globālo mainīgu skaraksts
     var
         Time: time;
         output: Text[100];
