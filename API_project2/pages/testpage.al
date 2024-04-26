@@ -20,17 +20,6 @@ page 50803 testpage
                     Caption = 'result';
                     editable = false;
                 }
-
-                field(time; time)
-                {
-                    Caption = 'time example';
-                }
-
-                field(time_result; time_result)
-                {
-                    Caption = 'time reslut';
-                    Editable = false;
-                }
             }
         }
     }
@@ -55,13 +44,14 @@ page 50803 testpage
             action(ShowTime)
             {
                 Caption = 'show time';
-                Tooltip = 'shows time ritten in words';
+                Tooltip = 'shows time written in words';
                 ApplicationArea = All;
                 Image = Change;
 
                 trigger OnAction()
                 begin
-                    time_result := Code_time.Transform_time(time);
+                    Dialog.RunModal();
+                    Clear(Dialog);
                 end;
             }
         }
@@ -75,4 +65,6 @@ page 50803 testpage
         data: text[300];
         time_result: text;
         time: time;
+        Cod: code[1];
+        Dialog: page "time dialog";
 }
